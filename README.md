@@ -56,7 +56,7 @@ or
 - ``char`` for characters, *e.g,* 'A', '!', '1', ..etc.
 
 ### Variable Names
-- ✔️ Variable names must contain only letters, (A-Z, a-z), digits (0-9), and underscores ().
+- ✔️ Variable names must contain only letters, (``A-Z``, ``a-z``), digits (``0-9``), and underscores (``_``).
 - ✔️ Each variable must be identified with a unique name.
 - ✔️ Variables should starts with a letter or underscore.
 - ❌ Don’t include white-spaces or special characters.
@@ -77,3 +77,137 @@ We need to use them whether we’re printing formatted output with ``printf()`` 
 - For real numbers (``float``) we use ``%f``.
 - For characters (``char``) we use ``%c``.
 
+- **Example:**
+```c
+#include <stdio.h>
+
+int main(){
+    int number = 10;
+    float pi = 3.14;
+    char character = '#';
+
+    printf("Number is %d, the value of PI is %f, the character is %c", number, pi, character);
+    return 0;
+}
+```
+-  **Output**
+```text
+Number is 10, the value of PI is 3.14, the character is #
+```
+
+# User Input
+To get user input we use the ``scanf()`` function.
+
+The ``scanf()`` function takes two arguments:
+
+- The **format specifier** of the variable (*e.g,* ``%d`` for integers).
+- The **memory location (address) of the variable**, here we use the address operator ``&`` *e.g,* ``&myVar``.
+- **Example:**
+```c
+#include <stdio.h>
+
+int main(){
+    int birth_year;
+
+    // We show the user a message to properly ask what we need from him.
+    printf("Enter your birth year: ");
+    // In the address of the birth_year variable, we store what the user will type.
+    scanf("%d", &birth_year);
+    return 0;
+}
+```
+> [!TIP]
+> Comments can be used to explain code, and to make it more readable.
+>
+> - Single-line comments start with two forward slashes (``//``).
+> - Multi-line comments start with ``/*`` and ends with ``*/``.
+
+# Operators
+## A. Arithmetic Operators
+| Name    | Operator    | Description    | Example    |
+|---------------- | --------------- | --------------- | --------------- |
+| Addition    | ``+``    | Adds together two values    | ``7 + 3`` (result is 10)|
+| Subtraction    | ``-``    | Subtracts one value from another    | ``7 - 3`` (result is 4)|
+| Multiplication   | ``*``   | Multiplies two values   | ``7 * 3`` (result is 21)|
+| Division   | ``/``   | Divides one value by another   | ``7 / 3`` (result is 2)|
+| Modulus   | ``%``   | Returns the division remainder   | ``7 % 3`` (result is 1)|
+
+## B. Comparison Operators
+| Name    | Operator    | Description    | Example    |
+|---------------- | --------------- | --------------- | --------------- |
+| Equal to    | ``==``    | Returns 1 if the values are equal    | ``7 == 3`` (result is 0)|
+| Not equal    | ``!=``    | Returns 1 if the values are not equal    | ``7 != 3`` (result is 1)|
+| Greater than   | ``>``   | Returns 1 if the first value is greater than the second value   | ``7 > 3`` (result is 1)|
+| Less than   | ``<``   |  	Returns 1 if the first value is less than the second value   | ``7 < 3`` (result is 0)|
+| Greater than or equal to   | ``>=``   | Returns 1 if the first value is greater than, or equal to, the second value   | ``7 >= 3`` (result is 1)|
+| Less than or equal to   | ``<=``   | Returns 1 if the first value is less than, or equal to, the second value   | ``7 <= 3`` (result is 0)|
+
+## C. Logical Operators
+| Name    | Operator    | Description    | Example    |
+|---------------- | --------------- | --------------- | --------------- |
+| AND    | ``&&``    | Returns 1 if both statements are true    | ``(7 > 3) && 0`` (result is 0)|
+| OR    | ``\|\|``    | Returns 1 if one of the statements is true    | ``(7 > 3) \|\| 0`` (result is 1)|
+| NOT   | ``!``   | Reverse the result, returns 0 if the result is 1   | ``!(7 > 3)`` (result is 0)|
+
+# Conditional Statements
+## ``if`` Statement
+The ``if`` in C is the most simple decision-making statement. We use the ``if`` statement to specify a block of code to be executed if a condition is **true**.
+
+```c
+if (condition){
+    // block of code to be executed if the condition is true..
+}
+```
+
+- **Example**
+
+```c
+#include <stdio.h>
+
+int main(){
+    int x = 7, y = 3;
+
+    if (x > y){
+        printf("%d is greater than %d", x, y);
+    }
+
+    return 0;
+}
+```
+-  **Output**
+```text
+7 is greater than 3
+```
+
+## ``if .. else`` Statement
+In the ``if..else`` statement,  if the given condition is **true**, then the code inside the ``if`` block is executed, **otherwise** the code inside the ``else`` block is executed.
+
+```c
+if (condition){
+    // block of code to be executed if the condition is true..
+} else {
+    // block of code to be executed if the condition is false..
+}
+```
+
+- **Example**
+
+```c
+#include <stdio.h>
+
+int main(){
+    int x = 5, y = 10;
+
+    if (x > y){
+        printf("%d is greater than %d", x, y);
+    } else {
+        printf("%d is less than or equal to %d", x, y);
+    }
+
+    return 0;
+}
+```
+-  **Output**
+```text
+5 is less than or equal to 10
+```
