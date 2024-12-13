@@ -379,3 +379,63 @@ int main(){
 12
 16
 ```
+
+# Data Structures
+# A. Arrays
+Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value. 
+
+An array in C is a ***fixed-size*** collection of ***similar*** data items.
+
+```c
+data_type array_name[size]; // Declaration
+
+data_type array_name[size] = {value_1, value_2, value_3, ...}; // Declaration with initial values
+```
+
+- **Example**
+
+```c
+#include <stdio.h>
+
+int main(){
+    char name[15];
+    int integers[5] = {5, 7, 0, 1, 24};
+
+    return 0;
+}
+```
+
+## 👉 Initialization After Declaration
+We can use ``for`` loop, ``while`` loop, or ``do..while`` loop to assign the value to each element of the array.
+
+- **Example**
+
+```c
+#include <stdio.h>
+
+int main(){
+    int i, size = 5;
+    int array[size];
+
+    for(i = 0; i < size; i++){
+        array[i] = i;
+    }
+
+    // printing the values inside the array
+    for(i = 0; i < size; i++){
+        printf("%d\t", array[i]);
+    }
+    
+    return 0;
+}
+```
+
+-  **Output**
+```text
+0    1    2    3    4
+```
+
+>[!CAUTION]
+> One thing to note is that the indexing in the array always **starts with 0**.
+>
+> **The first element is at index 0 and the last element is at N – 1 where N is the number of elements in the array**
